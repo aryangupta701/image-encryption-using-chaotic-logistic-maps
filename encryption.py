@@ -22,7 +22,7 @@ print(key)
 print(realnumbers)
 #encryption substitution wiith XOR
 z=0
-enimg = np.zeros(shape=[height , width, 3], dtype = np.uint8)
+enimg = np.zeros(shape=[height , width, 4], dtype = np.uint8)
 for i in range(height):
     for j in range(width):
         enimg[i,j] = img[i,j]^key[z]
