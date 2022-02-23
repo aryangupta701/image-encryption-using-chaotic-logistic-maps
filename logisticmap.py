@@ -11,4 +11,4 @@ def generator(x,r,size):
             if(z==size):
                 break;
     return map
-    
+

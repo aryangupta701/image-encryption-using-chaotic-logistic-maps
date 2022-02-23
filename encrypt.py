@@ -5,16 +5,18 @@ import initalvaluegen as initvalue
 import realnum 
 import numpy as np 
 import encryptcalculate as cal 
-from tkinter import filedialog
 from tkinter import messagebox
+import encryptkey
 
 def enc_success(imagename):
     messagebox.showinfo("Success","Encrypted Image: " + imagename)
 
-def enc_success(imagename):
+def dyc_success(imagename):
     messagebox.showinfo("Success","Decrypted Image: " + imagename)
     
-def encryption(key,isEncrypt,file_name):
+def encryption(inputkey,isEncrypt,file_name):
+    k = encryptkey.encryptkey(inputkey , len(inputkey))
+    key = list(k)
     img = mpimg.imread(file_name)
     plt.imshow(img)
     plt.show()
@@ -30,6 +32,10 @@ def encryption(key,isEncrypt,file_name):
         for j in range(width):
             enimg[i,j] = cal.calcEncrypt(img[i,j],chaoticmap[z],key,isEncrypt)
             z+=1
+            if(z%16 == 0):
+                for x in range(9):
+                    key[x] = chr((ord(key[x]) + ord(key[9]))%256)
+                    
     plt.imsave(file_name,enimg)
     if(isEncrypt):
         enc_success(file_name)

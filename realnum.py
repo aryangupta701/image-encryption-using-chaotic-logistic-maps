@@ -11,4 +11,3 @@ def realnumgen(x,r,size):
         if(z==size):
             break;
     return arr 
-    

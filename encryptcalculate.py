@@ -1,6 +1,5 @@
 def calcEncrypt(pix , val, key , isEncrypt):
     pixel = pix.copy()
-    print(val , pixel)
     if((val>=0.10 and val<0.13) or 
        (val>=0.34 and val<0.37) or
        (val>=0.58 and val<0.62) ):

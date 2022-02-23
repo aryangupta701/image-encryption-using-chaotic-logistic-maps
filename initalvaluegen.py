@@ -6,7 +6,7 @@ def initialX(inputkey):
     for i in range(4,7):
         temp = ord(inputkey[i])
         for j in range(8):
-            if (temp & (1<<j)!=0):
+            if ((temp & (1<<j))!=0):
                 bitval=1
             else:
                 bitval=0
@@ -30,7 +30,7 @@ def initialY(inputkey , p):
     for i in range(3):
         temp = ord(inputkey[i])
         for j in range(8):
-            if (temp & (1<<j)!=0):
+            if ((temp & (1<<j))!=0):
                 bitval=1
             else:
                 bitval=0
